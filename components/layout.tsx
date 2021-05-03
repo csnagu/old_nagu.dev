@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeColorChanger from "./darkModeBtn";
 
 const name = "nagu";
 export const siteTitle = "nagu.dev";
@@ -27,6 +28,7 @@ export default function Layout({ children, home }) {
         </Link>
         <a className="nav-link" href="https://nagu.hatenablog.jp/">Blog</a>
         <a className="nav-link" href="https://github.com/csnagu">GitHub</a>
+        <ThemeColorChanger></ThemeColorChanger>
       </nav>
       <header className="flex flex-col items-center">
         {home ? (
