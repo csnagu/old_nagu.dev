@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,13 +7,13 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-          <Link href="https://example.com"><a>hoge</a></Link>
-        </p>
+      <section className="pb-12">
+        <h2 className="text-xl underline">About Me</h2>
+        <p>監視基盤に携わってるDevOpsエンジニア👻</p>
+        <p>基盤システムの開発運用やPoC、ユーザサポートなどやってます。</p>
+        <br />
+        <p>設計から実装、インフラ整備、運用まで全部楽しみたいのでもちょもちょ勉強中。</p>
+        <p>Zwiftをやっているので出会いましたら対戦よろしくお願いします🚲</p>
       </section>
     </Layout>
   )

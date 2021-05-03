@@ -37,11 +37,11 @@ export default function Layout({ children, home }) {
               priority
               src="/images/profile.jpg"
               className="rounded-full"
-              height={144}
-              width={144}
+              height={128}
+              width={128}
               alt={name}
             />
-            <h1 className="text-4xl font-medium my-4 mx-0">{name}</h1>
+            <h1 className="text-2xl font-medium my-4 mx-0">{name}</h1>
           </>
         ) : (<></>)}
       </header>
