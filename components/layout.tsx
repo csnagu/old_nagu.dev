@@ -1,20 +1,17 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
-const name = 'nagu'
-export const siteTitle = 'nagu.dev'
-const descriptionContent = 'homepage'
+const name = "nagu";
+export const siteTitle = "nagu.dev";
+const descriptionContent = "homepage";
 
 export default function Layout({ children, home }) {
   return (
     <div className="max-w-xl p-5 mx-auto">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content={descriptionContent}
-        />
+        <meta name="description" content={descriptionContent} />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -24,6 +21,13 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <nav className="flex flex-row justify-evenly pb-12">
+        <Link href="/">
+          <a className="nav-link">Home</a>
+        </Link>
+        <a className="nav-link" href="https://nagu.hatenablog.jp/">Blog</a>
+        <a className="nav-link" href="https://github.com/csnagu">GitHub</a>
+      </nav>
       <header className="flex flex-col items-center">
         {home ? (
           <>
@@ -37,27 +41,7 @@ export default function Layout({ children, home }) {
             />
             <h1 className="text-4xl font-medium my-4 mx-0">{name}</h1>
           </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className="rounded-full"
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className="text-2xl leading-normal my-4 mx-0">
-              <Link href="/">
-                <a>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
+        ) : (<></>)}
       </header>
       <main>{children}</main>
       {!home && (
@@ -68,5 +52,5 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
-  )
+  );
 }
