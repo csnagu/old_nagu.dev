@@ -26,7 +26,7 @@ export default function Layout({ children, home }) {
         <Link href="/">
           <a className="nav-link">Home</a>
         </Link>
-        <a className="nav-link" href="https://nagu.hatenablog.jp/">Blog</a>
+        <a className="nav-link" href="https://blog.nagu.dev/">Blog</a>
         <a className="nav-link" href="https://github.com/csnagu">GitHub</a>
         <ThemeColorChanger></ThemeColorChanger>
       </nav>
