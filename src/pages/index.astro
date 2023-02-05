@@ -1,0 +1,31 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import config from "src/config";
+import { Frontmatter, sortDateDescending, capitalizeString } from "src/misc";
+
+const {
+  social,
+} = config;
+---
+
+<BaseLayout title="Home" activeLink="home">
+  <section class="flex flex-col sm:flex-row justify-center max-w-[90%] w-[52rem] mx-auto gap-12 mb-48">
+    <img width="200" height="200" src="images/profile.jpg" alt="avatar" class="rounded-md h-fit self-center justify-self-center" />
+    <div class="flex flex-col flex-wrap flex-grow">
+      <h1 class="text-center bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent text-5xl mb-[0.7em]">
+        About Me
+      </h1>
+	  <p class="text-center">監視基盤に携わってるソフトウェアエンジニアです。基盤システムの開発運用やPoC、ユーザサポートなどやってます。ステークホルダーとの調整から設計・実装・運用まで色々やりたい。</p>
+	  <div class="flex flex-wrap justify-center gap-5 mt-4">
+        {
+          social.map((ele) => (
+            <a class="w-8 h-8 flex scale-1 hover:scale-125 transition-[scale] justify-center" href={ele.link} target="_blank" rel="noreferrer noopener">
+              <span class="sr-only">{`Link to my ${ele.sr ?? capitalizeString(ele.link.replace(/.+\/\/|www.|\..+/g, ""))} account`}</span>
+              <Fragment set:html={ele.svg} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
