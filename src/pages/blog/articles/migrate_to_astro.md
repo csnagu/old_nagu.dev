@@ -4,7 +4,7 @@ title: Hello Astro
 description: ホームページをNext.jsからAstroへ乗り換えた
 date: 2023-2-5
 tags:
-  - Tech
+  - tech
 ---
 
 ## Astro is なに
