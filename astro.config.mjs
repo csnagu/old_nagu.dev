@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), sitemap()],
-  site: "https://csnagu.github.io",
+  site: "https://nagu.dev",
   base: "/",
   markdown: {
     shikiConfig: {
